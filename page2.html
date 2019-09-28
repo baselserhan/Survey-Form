@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Survey Form</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <style>
+        html, body {
+            text-align: center;
+            font-family: 'Raleway', Helvetica, sans-serif;
+            background-image: linear-gradient(120deg,#3498db,#8e44ad);
+        }
+        #form-outer {
+            background-color: #FFF;
+            margin: 0 auto;
+            border-radius: 4px;
+            width: 75%;
+            max-width: 900px;
+            padding: 10px;
+            padding-top: 20px;
+        }
+        .labels {
+            display: inline-block;
+            text-align: right;
+            width: 40%;
+            vertical-align: top;
+            margin-top: 10px;
+            
+        }
+        .rightTab {
+            display: inline-block;
+            text-align: left;
+            width: 35%;
+            vertical-align: middle;
+            padding: 5px;
+            padding-bottom: 20px;
+            
+        }
+        .dropdown {
+            height: 35px;
+            width: 140px;
+            padding: 5px;
+            margin: 10px;
+            margin-top: 10px;
+            border: 1px solid #c0c0c0;
+            border-radius: 2px;
+            font-size: 14px;
+        }
+        #title{
+            padding: 10px;
+            margin: 10px;
+            color: #FFF;
+        }
+        .radio, .checkbox {
+            position: relative;
+            left: -43px;
+            margin-left: 10px;
+            display: block;
+            padding-bottom: 10px;
+        }
+        .myinput{
+            float: left;
+            margin-top: 5px;
+        }
+        .mylabel{
+        padding-bottom: 5px;
+        padding-left: 5px;
+        }
+        #most-like{
+            margin-top: 0px;
+            font-size: 14px;
+        }
+        .my-label{
+            margin-left: -75px;
+        }
+        .my-input{
+            float: left;
+        }
+        .mydiv{
+            display: inline-block;
+            margin-left: -30px;
+        
+        }
+        .form-check{
+            display: inline-block;
+            margin-right: 60px;
+        }
+       
+        .userRatings, input[type="checkbox"] {
+            float: left;
+            margin-right: 5px;
+            margin-top: 5px;  
+        }
+        .input-field {
+            width: 280px;
+            padding: 10px;
+            margin: 5px;
+            border: 1px solid #c0c0c0;
+            border-radius: 2px;
+        }
+        #submit {
+            background-color: #59ace0;
+            border-radius: 4px;
+            color: white;
+            font-size: 1em;
+            height: 40px;
+            width: 96px;
+            margin: 10px;
+            border: 0px solid;
+            margin-top: -5px;
+        }
+        #submit:hover{
+            background-color: rgb(40, 88, 245);
+        }
+
+
+    </style>
+</head>
+<body>
+   <h1 id="title">Survey Form</h1>
+   <div id="form-outer">
+    <p id="description">Let us know how we can improve your skills</p>
+    <form id="survey-form">
+        <div class="rowTab">
+            <div class="labels">
+                <label id="name-label" for="name">*Name:</label>
+            </div>
+            <div class="rightTab">
+                <input id="name" class="form-control " autofocus type="text" name="name" placeholder="Enter your name" required>
+            </div>
+        </div>
+        <div class="rowTab">
+            <div class="labels">
+                <label id="email-label" for="email">*Email:</label>
+            </div>
+        <div class="rightTab">
+                <input id="email" class="form-control" type="email" name="email" placeholder="Enter your Email" required>
+            </div>
+        </div>
+        <div class="rowTab">
+            <div class="labels">
+                <label id="number-label" for="age">*Age:</label>
+             </div>
+            <div class="rightTab">
+                <input id="number" class="form-control" type="number" name="age" placeholder="Age" required min="1" max="125">
+            </div>
+        </div>
+        <div class="rowTab">
+            <div class="labels">
+                <label for="favouriteHobbies">Which option best describes your favourite hobbies?</label>
+            </div>
+            <div class="rightTab">
+                <select id="dropdown" class="dropdown" name="favouriteHobbies">
+                    <option disabled >Select an option</option>
+                    <option>Football</option>
+                    <option>Basketball</option>
+                    <option>Handball</option>
+                    <option>Programming</option>
+                    <option>Design</option>
+                    <option>Translation</option>
+                </select>
+            </div>
+        </div>
+        <div class="rowTab">
+            <div class="labels">
+                <label for="userRating">* What is your favourite browser?</label>
+            </div>
+            <div class="rightTab">
+                <label class="mylabel">Firefox</label>
+                <input name="input" type="radio" class="myinput"><br>
+                <label class="mylabel">Google Chrome</label>
+                <input name="input" type="radio" class="myinput"><br>
+                <label class="mylabel">Opera</label>
+                <input name="input" type="radio" class="myinput">
+            </div>
+        </div>
+        <div class="rowTab">
+            <div class="labels">
+                <label for="most-like">What do you like most in FCC: </label>
+            </div>
+            <div class="rightTab">
+                <select id="most-like" name="mostLike" class="dropdown">
+                    <option disabled="" selected="" value="">Select an option</option>
+                    <option value="challenges">Challenges</option>
+                    <option value="projects">Projects</option>
+                    <option value="community">Community</option>
+                    <option value="openSource">Open Source</option>
+                </select>
+            </div>
+        </div>
+        <div class="rowTab">
+            <div class="labels">
+            <label for="preferences">Things that should be improved in the future<br>(Check all that apply): </label>
+            </div>
+        <div class="rightTab">
+            <ul id="preferences" style="list-style: none;">
+            <li class="checkbox"><label class="myLabel"><input name="prefer" value="1" type="checkbox" class="userRatings">Front-end Projects</label></li>
+            <li class="checkbox"><label class="myLabel"><input name="prefer" value="2" type="checkbox" class="userRatings">Back-end Projects</label></li>
+            <li class="checkbox"><label class="myLabel"><input name="prefer" value="3" type="checkbox" class="userRatings">Data Visualization</label></li>
+            <li class="checkbox"><label class="myLabel"><input name="prefer" value="4" type="checkbox" class="userRatings">Challenges</label></li>
+            <li class="checkbox"><label class="myLabel"><input name="prefer" value="5" type="checkbox" class="userRatings">Open Source Community</label></li>
+            <li class="checkbox"><label class="myLabel"><input name="prefer" value="6" type="checkbox" class="userRatings">Gitter help rooms</label></li>
+            <li class="checkbox"><label class="myLabel"><input name="prefer" value="7" type="checkbox" class="userRatings">Videos</label></li>
+            <li class="checkbox"><label class="myLabel"><input name="prefer" value="8" type="checkbox" class="userRatings">City Meetups</label></li>
+            <li class="checkbox"><label class="myLabel"><input name="prefer" value="9" type="checkbox" class="userRatings">Wiki</label></li>
+            <li class="checkbox"><label class="myLabel"><input name="prefer" value="10" type="checkbox" class="userRatings">Forum</label></li>
+            <li class="checkbox"><label class="myLabel"><input name="prefer" value="11" type="checkbox" class="userRatings">Additional Courses</label></li>
+            </ul>
+        </div>
+        </div>
+        <div class="rowTab">
+            <div class="labels">
+            <label for="comments">Any Comments or Suggestions?</label>
+            </div>
+        <div class="rightTab">
+            <textarea id="comments" class="input-field" style="height:50px;resize:vertical;" name="comment" placeholder="Enter your comment here..."></textarea>
+        </div>
+        </div>
+        <button id="submit" type="submit">Submit</button>
+    </form>
+</div> 
+</body>
+</html>
